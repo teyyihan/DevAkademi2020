@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=ads
+      - MONGO_INIT_ROOT_USERNAME=teyyihan
+      - MONGO_INIT_ROOT_PASSWORD=teyyihan
+    volumes:
+      - ./db/mongo-volume:/data/db
+    ports:
+      - 27017-27019:27017-27019
+
+  mongo-seed:
+    build: ./script
+    image: mongo_python_json_seed:latest
+    container_name: mongo_seed
+    links:
+      - mongodb
+
+  spring:
+    build: spring_app/
+    ports:
+      - 8080:8080
+    container_name: spring
+    depends_on:
+      - mongodb
+    links:
+      - mongodb

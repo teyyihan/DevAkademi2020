@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DevAkademi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="seller_type_spinner">
+        <item>CORPORATE</item>
+        <item>INDIVIDUAL</item>
+    </string-array>
+
+</resources>

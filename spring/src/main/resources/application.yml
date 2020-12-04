@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      database: ads
+      port: 27017
+      host: mongodb
+#      host: localhost
